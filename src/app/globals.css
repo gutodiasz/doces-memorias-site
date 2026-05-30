@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest: #123c25;
+  --moss: #244b1d;
+  --cream: #f7f1e3;
+  --gold: #c8a96a;
+  --ink: #0b0f0c;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgba(200, 169, 106, 0.35);
+}
+
+.hero-surface {
+  position: relative;
+}
+
+.hero-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.32);
+  pointer-events: none;
+}
+
+.hero-arrangement {
+  isolation: isolate;
+}
+
+.mock-photo,
+.mock-mini,
+.product-visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.mock-photo {
+  min-height: 170px;
+  border-radius: 8px;
+}
+
+.mock-mini {
+  width: 84px;
+  height: 84px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+}
+
+.mock-photo::before,
+.mock-mini::before,
+.product-visual::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.88) 0 9%, transparent 10%),
+    radial-gradient(circle at 35% 40%, rgba(247, 241, 227, 0.9) 0 12%, transparent 13%),
+    radial-gradient(circle at 63% 42%, rgba(200, 169, 106, 0.72) 0 12%, transparent 13%),
+    radial-gradient(circle at 50% 62%, rgba(18, 60, 37, 0.78) 0 16%, transparent 17%);
+  opacity: 0.88;
+}
+
+.mock-photo::after,
+.mock-mini::after,
+.product-visual::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  width: 34%;
+  height: 46%;
+  transform: translateX(-50%);
+  border-radius: 999px 999px 8px 8px;
+  background: linear-gradient(180deg, rgba(36, 75, 29, 0.85), rgba(18, 60, 37, 0.95));
+}
+
+.mock-bouquet,
+.product-visual-bouquet {
+  background:
+    linear-gradient(140deg, rgba(18, 60, 37, 0.1), rgba(200, 169, 106, 0.25)),
+    var(--cream);
+}
+
+.mock-wreath,
+.product-visual-wreath {
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 35%),
+    linear-gradient(140deg, rgba(36, 75, 29, 0.8), rgba(18, 60, 37, 0.98));
+}
+
+.mock-gift,
+.product-visual-gift {
+  background:
+    linear-gradient(140deg, rgba(200, 169, 106, 0.28), rgba(255, 255, 255, 0.88)),
+    var(--cream);
+}
+
+.product-visual {
+  min-height: 210px;
+  background: var(--cream);
+}
+
+.product-visual span {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  z-index: 2;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 10px;
+  color: var(--forest);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.product-visual-rose {
+  background:
+    linear-gradient(140deg, rgba(200, 169, 106, 0.3), rgba(247, 241, 227, 0.95)),
+    var(--cream);
+}
+
+.product-visual-arrangement {
+  background:
+    linear-gradient(140deg, rgba(36, 75, 29, 0.12), rgba(200, 169, 106, 0.26)),
+    var(--cream);
+}
+
+.product-visual-wrap {
+  background:
+    repeating-linear-gradient(135deg, rgba(200, 169, 106, 0.16) 0 10px, rgba(247, 241, 227, 0.95) 10px 20px),
+    var(--cream);
+}
+
+.form-label {
+  display: block;
+  color: rgba(11, 15, 12, 0.7);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid rgba(18, 60, 37, 0.15);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink);
+  min-height: 48px;
+  padding: 0.75rem 0.875rem;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-control:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200, 169, 106, 0.24);
+}
+
+.location-panel {
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(247, 241, 227, 0.9));
+}
+
+@media (max-width: 640px) {
+  .product-visual {
+    min-height: 180px;
+  }
+}
