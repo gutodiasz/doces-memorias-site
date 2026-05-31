@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Minus, Plus, Send, X } from "lucide-react";
 import { paymentMethods, whatsappBaseUrl } from "@/lib/brand";
@@ -77,6 +78,28 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
+          </div>
+
+          <div className="px-5 pt-5 sm:px-6 sm:pt-6">
+            <div
+              className={`product-modal-visual product-visual product-visual-${product.visual} ${
+                product.imageSrc ? "product-visual-has-image" : ""
+              }`}
+            >
+              {product.imageSrc ? (
+                <>
+                  <Image
+                    src={product.imageSrc}
+                    alt={product.name}
+                    fill
+                    sizes="(min-width: 768px) 720px, calc(100vw - 40px)"
+                    className="object-cover"
+                  />
+                  <div className="product-visual-shade" />
+                </>
+              ) : null}
+              <span>{product.tag}</span>
+            </div>
           </div>
 
           <div className="grid gap-4 p-5 sm:grid-cols-2 sm:p-6">

@@ -15,6 +15,7 @@ export type Product = {
   description: string;
   tag: string;
   visual: "rose" | "bouquet" | "wreath" | "gift" | "wrap" | "arrangement";
+  imageSrc?: string;
 };
 
 export const products: Product[] = [
@@ -25,7 +26,8 @@ export const products: Product[] = [
     priceLabel: "Consultar",
     description: "Montado sob medida com flores, cores e acabamento escolhidos para a ocasião.",
     tag: "Mais pedido",
-    visual: "bouquet"
+    visual: "bouquet",
+    imageSrc: "/products/buque-personalizado.png"
   },
   {
     id: "rosa-natural",
@@ -34,7 +36,8 @@ export const products: Product[] = [
     price: 15,
     description: "Rosa natural selecionada, ideal para homenagens, lembranças e composições.",
     tag: "Natural",
-    visual: "rose"
+    visual: "rose",
+    imageSrc: "/products/rosa-natural.png"
   },
   {
     id: "rosa-artificial",
@@ -79,7 +82,8 @@ export const products: Product[] = [
     priceLabel: "Consultar",
     description: "Arranjo pronto no cachepot, com acabamento elegante para presentear.",
     tag: "Pronto",
-    visual: "arrangement"
+    visual: "arrangement",
+    imageSrc: "/products/arranjo-cachepot.png"
   },
   {
     id: "coroa-flores-natural",
@@ -88,7 +92,8 @@ export const products: Product[] = [
     price: 380,
     description: "Coroa natural para homenagens com flores frescas e composição respeitosa.",
     tag: "Homenagem",
-    visual: "wreath"
+    visual: "wreath",
+    imageSrc: "/products/coroa-flores-natural.png"
   },
   {
     id: "coroa-flores-natural-grande",
@@ -205,7 +210,8 @@ export const products: Product[] = [
     priceLabel: "Consultar",
     description: "Composição afetiva com flores, café e detalhes especiais para presentear.",
     tag: "Afetivo",
-    visual: "gift"
+    visual: "gift",
+    imageSrc: "/products/presente-cafe-flores.png"
   },
   {
     id: "petalas-rosas-naturais",

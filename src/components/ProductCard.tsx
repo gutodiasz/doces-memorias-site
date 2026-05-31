@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { formatPrice, type Product } from "@/data/products";
 
@@ -11,7 +12,23 @@ type ProductCardProps = {
 export function ProductCard({ product, onPersonalize }: ProductCardProps) {
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-forest/10 bg-white shadow-sm transition hover:-translate-y-1 hover:border-gold hover:shadow-soft">
-      <div className={`product-visual product-visual-${product.visual}`}>
+      <div
+        className={`product-visual product-visual-${product.visual} ${
+          product.imageSrc ? "product-visual-has-image" : ""
+        }`}
+      >
+        {product.imageSrc ? (
+          <>
+            <Image
+              src={product.imageSrc}
+              alt={product.name}
+              fill
+              sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover transition duration-500 group-hover:scale-105"
+            />
+            <div className="product-visual-shade" />
+          </>
+        ) : null}
         <span>{product.tag}</span>
       </div>
       <div className="flex flex-1 flex-col p-5">
